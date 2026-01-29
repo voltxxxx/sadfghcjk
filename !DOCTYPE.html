@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Training Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg: #000;
+  --text: #fff;
+  --muted: #888;
+  --line: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  padding: 30px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+header h1 {
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+nav a {
+  margin-left: 35px;
+  font-size: 13px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 70px;
+}
+
+.hero-content {
+  max-width: 900px;
+  animation: heroIn 1.2s ease forwards;
+}
+
+.hero h2 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero h2 span {
+  color: var(--muted);
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 650px;
+  color: #aaa;
+  margin-bottom: 50px;
+}
+
+.hero button {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  padding: 18px 55px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  transform: translateY(-3px);
+  background: #e5e5e5;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+  padding: 120px 70px;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 80px;
+}
+
+/* ================= CARDS ================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.05), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  border-color: var(--text);
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.7;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 50px 70px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ================= ANIMAÇÕES ================= */
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+  header, section, footer, .hero {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .hero h2 {
+    font-size: 42px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TRAINING HUB</h1>
+  <nav>
+    <a href="#">Conteúdos</a>
+    <a href="#">Método</a>
+    <a href="#">Contato</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h2>
+      Performance não é sorte.<br>
+      <span>É processo.</span>
+    </h2>
+    <p>
+      Treinamento competitivo focado em leitura de jogo, decisões corretas
+      e consistência. Evolução real para quem quer jogar sério.
+    </p>
+    <button>COMEÇAR AGORA</button>
+  </div>
+</div>
+
+<section>
+  <h2 class="section-title">Conteúdos</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>God Gliders</h3>
+      <p>
+        Domine movimentação avançada, controle de zona
+        e decisões sob pressão em alto nível competitivo.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Rotações de Drop</h3>
+      <p>
+        Rotas otimizadas, leitura de mapa e timings
+        precisos para evitar riscos desnecessários.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Rotina de Treino</h3>
+      <p>
+        Estrutura diária para evolução constante,
+        com foco em mecânica, game sense e disciplina.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>VOD Review</h3>
+      <p>
+        Análise profunda de partidas para corrigir erros,
+        refinar decisões e acelerar resultados.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© Training Hub — Todos os direitos reservados</span>
+  <span>Sobre • Conteúdos • Contato</span>
+</footer>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
